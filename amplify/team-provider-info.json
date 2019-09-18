@@ -1,0 +1,19 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "myblogv3-dev-20190918053453-authRole",
+            "UnauthRoleArn": "arn:aws:iam::340854501236:role/myblogv3-dev-20190918053453-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::340854501236:role/myblogv3-dev-20190918053453-authRole",
+            "Region": "ap-southeast-2",
+            "DeploymentBucketName": "myblogv3-dev-20190918053453-deployment",
+            "UnauthRoleName": "myblogv3-dev-20190918053453-unauthRole",
+            "StackName": "myblogv3-dev-20190918053453",
+            "StackId": "arn:aws:cloudformation:ap-southeast-2:340854501236:stack/myblogv3-dev-20190918053453/38cdd460-d982-11e9-9d51-0694eae4f790"
+        },
+        "categories": {
+            "auth": {
+                "myblogv3d97d4991": {}
+            }
+        }
+    }
+}

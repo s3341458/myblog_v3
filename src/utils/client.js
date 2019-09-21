@@ -1,4 +1,3 @@
-import AppSyncConfig from '../aws-exports';
 import { Auth } from 'aws-amplify'
 
 import { ApolloClient } from 'apollo-client';
@@ -7,7 +6,7 @@ import { setContext } from 'apollo-link-context';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 
 const httpLink = createHttpLink({
-  uri: AppSyncConfig.aws_appsync_graphqlEndpoint,
+  uri: process.env.GATSBY_GRAPHQL_ENDPOINT,
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -16,7 +15,7 @@ const authLink = setContext((_, { headers }) => {
     headers: {
       ...headers,
       "authorization": token ? token : "",
-      "x-api-key": AppSyncConfig.aws_appsync_apiKey
+      "x-api-key": process.env.GATSBY_APPSYNC_API_KEY
     }
   }
 })

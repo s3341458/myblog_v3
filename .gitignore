@@ -68,6 +68,10 @@ yarn-error.log
 # Yarn Integrity file
 .yarn-integrity
 
+
+# direnv
+.envrc
+
 #amplify
 amplify/\#current-cloud-backend
 amplify/.config/local-*
@@ -79,7 +83,3 @@ dist/
 node_modules/
 aws-exports.js
 awsconfiguration.json
-
-
-# direnv
-.envrc

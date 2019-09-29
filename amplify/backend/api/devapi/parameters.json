@@ -1,0 +1,11 @@
+{
+    "AppSyncApiName": "devapi",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": "false",
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authmyblogv3fd6a5645",
+            "Outputs.UserPoolId"
+        ]
+    }
+}

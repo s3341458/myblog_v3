@@ -5,9 +5,9 @@ export const createComment = `mutation CreateComment($input: CreateCommentInput!
   createComment(input: $input) {
     id
     content
+    owner
     postPath
     timestamp
-    owner
   }
 }
 `;
@@ -15,9 +15,9 @@ export const updateComment = `mutation UpdateComment($input: UpdateCommentInput!
   updateComment(input: $input) {
     id
     content
+    owner
     postPath
     timestamp
-    owner
   }
 }
 `;
@@ -25,9 +25,9 @@ export const deleteComment = `mutation DeleteComment($input: DeleteCommentInput!
   deleteComment(input: $input) {
     id
     content
+    owner
     postPath
     timestamp
-    owner
   }
 }
 `;

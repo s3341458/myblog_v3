@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Auth } from 'aws-amplify';
 
 // To federated sign in from Facebook
-class SignInWithFacebook extends Component {
+class FacebookButton extends Component {
     constructor(props) {
         super(props);
         this.signIn = this.signIn.bind(this);
@@ -51,7 +51,7 @@ class SignInWithFacebook extends Component {
 
                 Auth.federatedSignIn('facebook', { token: accessToken, expires_at }, user)
                 .then(credentials => {
-                    console.log(credentials);
+                    console.log("login should succeed", credentials);
                 });
             });
         }
@@ -75,7 +75,7 @@ class SignInWithFacebook extends Component {
         // init the fb sdk client
         const fb = window.FB;
         fb.init({
-            appId   : 'your_facebook_app_id',
+            appId   : process.env.GATSBY_FACEBOOK_APP_ID,
             cookie  : true,
             xfbml   : true,
             version : 'v2.11'
@@ -90,3 +90,5 @@ class SignInWithFacebook extends Component {
         );
     }
 }
+
+export default FacebookButton;

@@ -9,6 +9,7 @@ import { rhythm, scale } from "../utils/typography"
 import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 import Comment from '../components/comment';
+import FacebookButton from '../components/logins/FacebookButton';
 
 const GET_POST_COMMENTS = gql`
   query GetCommentsForPost($postPath: String!){
@@ -60,11 +61,13 @@ class BlogPostTemplate extends React.Component {
             </p>
           </header>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
+
           <hr
             style={{
               marginBottom: rhythm(1),
             }}
           />
+          <FacebookButton/>
           <footer>
             <div style={{ margin: '10px 0 60px 0' }}>
               <h3>Comments:</h3>
@@ -84,7 +87,7 @@ class BlogPostTemplate extends React.Component {
                       :
                       (
                         <ul>
-                          {comments.map(comment => <Comment comment={comment} />)}
+                          {comments.map(comment => <li key={comment.id}><Comment comment={comment}/></li>)}
                         </ul>
                       )
                   )

@@ -12,7 +12,7 @@ import Comment from "../components/comment"
 import FacebookButton from "../components/logins/FacebookButton"
 
 import { connect } from "react-redux"
-import loginAction from "../state/auth"
+import { loginAction } from "../state/auth"
 
 const GET_POST_COMMENTS = gql`
   query GetCommentsForPost($postPath: String!) {

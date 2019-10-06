@@ -55,6 +55,9 @@ class FacebookButton extends Component {
         user
       ).then(credentials => {
         console.log("login should succeed", credentials)
+        if (this.props.loginSuccess) {
+          this.props.loginSuccess()
+        }
       })
     })
   }

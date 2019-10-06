@@ -6,18 +6,17 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 
-import gql from 'graphql-tag';
-import { Query } from 'react-apollo';
-import Comment from '../components/comment';
-import FacebookButton from '../components/logins/FacebookButton';
+import gql from "graphql-tag"
+import { Query } from "react-apollo"
+import Comment from "../components/comment"
+import FacebookButton from "../components/logins/FacebookButton"
+
+import { connect } from "react-redux"
+import loginAction from "../state/auth"
 
 const GET_POST_COMMENTS = gql`
-  query GetCommentsForPost($postPath: String!){
-    listComments(
-      filter:{ postPath:{
-          eq: $postPath
-      }}
-    ) {
+  query GetCommentsForPost($postPath: String!) {
+    listComments(filter: { postPath: { eq: $postPath } }) {
       items {
         id
         timestamp
@@ -26,7 +25,7 @@ const GET_POST_COMMENTS = gql`
       }
     }
   }
-`;
+`
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -61,35 +60,44 @@ class BlogPostTemplate extends React.Component {
             </p>
           </header>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
-
           <hr
             style={{
               marginBottom: rhythm(1),
             }}
           />
-          <FacebookButton/>
+          {this.props.logined ? (
+            <p>logined</p>
+          ) : (
+            <FacebookButton
+              loginSuccess={() => this.props.dispatch(loginAction())}
+            />
+          )}
           <footer>
-            <div style={{ margin: '10px 0 60px 0' }}>
+            <div style={{ margin: "10px 0 60px 0" }}>
               <h3>Comments:</h3>
-              <Query query={GET_POST_COMMENTS} variables={{ postPath: post.fields.slug.replace(/\//g, '') }}>
+              <Query
+                query={GET_POST_COMMENTS}
+                variables={{ postPath: post.fields.slug.replace(/\//g, "") }}
+              >
                 {({ loading, error, data }) => {
                   if (loading) {
-                    return (<div>Loading...</div>);
+                    return <div>Loading...</div>
                   }
                   if (error) {
-                    console.error(error);
-                    return (<div>Error!</div>);
+                    console.error(error)
+                    return <div>Error!</div>
                   }
-                  const comments = data.listComments.items;
-                  return (
-                    comments.length <= 0 ?
-                      <div>No comments</div>
-                      :
-                      (
-                        <ul>
-                          {comments.map(comment => <li key={comment.id}><Comment comment={comment}/></li>)}
-                        </ul>
-                      )
+                  const comments = data.listComments.items
+                  return comments.length <= 0 ? (
+                    <div>No comments</div>
+                  ) : (
+                    <ul>
+                      {comments.map(comment => (
+                        <li key={comment.id}>
+                          <Comment comment={comment} />
+                        </li>
+                      ))}
+                    </ul>
                   )
                 }}
               </Query>
@@ -129,8 +137,6 @@ class BlogPostTemplate extends React.Component {
   }
 }
 
-export default BlogPostTemplate
-
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     site {
@@ -154,3 +160,10 @@ export const pageQuery = graphql`
     }
   }
 `
+
+//export default BlogPostTemplate;
+
+export default connect(
+  state => ({ logined: state.auth.logined }),
+  null
+)(BlogPostTemplate)

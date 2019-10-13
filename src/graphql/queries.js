@@ -5,9 +5,9 @@ export const getComment = `query GetComment($id: ID!) {
   getComment(id: $id) {
     id
     content
-    owner
     postPath
     timestamp
+    owner
   }
 }
 `;
@@ -20,9 +20,9 @@ export const listComments = `query ListComments(
     items {
       id
       content
-      owner
       postPath
       timestamp
+      owner
     }
     nextToken
   }

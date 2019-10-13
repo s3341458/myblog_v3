@@ -5,14 +5,17 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
+import { publicClient } from "../utils/client"
 
 import gql from "graphql-tag"
 import { Query } from "react-apollo"
+
 import Comment from "../components/comment"
-import FacebookButton from "../components/logins/FacebookButton"
+import CommentForm from "../components/CommentForm"
 
 import { connect } from "react-redux"
-import { loginAction } from "../state/auth"
+
+import { Auth } from 'aws-amplify';
 
 const GET_POST_COMMENTS = gql`
   query GetCommentsForPost($postPath: String!) {
@@ -65,18 +68,12 @@ class BlogPostTemplate extends React.Component {
               marginBottom: rhythm(1),
             }}
           />
-          {this.props.logined ? (
-            <p>logined</p>
-          ) : (
-            <FacebookButton
-              loginSuccess={() => this.props.dispatch(loginAction())}
-            />
-          )}
           <footer>
             <div style={{ margin: "10px 0 60px 0" }}>
               <h3>Comments:</h3>
               <Query
                 query={GET_POST_COMMENTS}
+                client={publicClient}
                 variables={{ postPath: post.fields.slug.replace(/\//g, "") }}
               >
                 {({ loading, error, data }) => {
@@ -101,11 +98,12 @@ class BlogPostTemplate extends React.Component {
                   )
                 }}
               </Query>
+              <CommentForm/>
+              <button onClick={() => Auth.federatedSignIn()}>Sign In New</button>
             </div>
             <Bio />
           </footer>
         </article>
-
         <nav>
           <ul
             style={{

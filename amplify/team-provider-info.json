@@ -17,5 +17,24 @@
                 }
             }
         }
+    },
+    "prod": {
+        "awscloudformation": {
+            "AuthRoleName": "myblogv3-prod-20191020220749-authRole",
+            "UnauthRoleArn": "arn:aws:iam::340854501236:role/myblogv3-prod-20191020220749-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::340854501236:role/myblogv3-prod-20191020220749-authRole",
+            "Region": "ap-southeast-2",
+            "DeploymentBucketName": "myblogv3-prod-20191020220749-deployment",
+            "UnauthRoleName": "myblogv3-prod-20191020220749-unauthRole",
+            "StackName": "myblogv3-prod-20191020220749",
+            "StackId": "arn:aws:cloudformation:ap-southeast-2:340854501236:stack/myblogv3-prod-20191020220749/db365310-f329-11e9-ab09-0a72ab51bdd0"
+        },
+        "categories": {
+            "auth": {
+                "myblogv3fd6a5645": {
+                    "hostedUIProviderCreds": "[{\"ProviderName\":\"Facebook\",\"client_id\":\"522811008278907\",\"client_secret\":\"2c3bc9634ef6727327164a76ff78dfab\"}]"
+                }
+            }
+        }
     }
 }

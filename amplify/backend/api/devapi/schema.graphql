@@ -8,5 +8,6 @@ type Comment
   id: ID!
   content: String!
   postPath: String!
+  posterName: String!
   timestamp: AWSDateTime!
 }

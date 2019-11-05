@@ -1,5 +1,5 @@
 {
-    "identityPoolName": "myblogv3fd6a5645_identitypool_fd6a5645",
+    "identityPoolName": "myblogv3fd6a5645_identitypool_4b21b70e",
     "allowUnauthenticatedIdentities": false,
     "resourceNameTruncated": "myblogfd6a5645",
     "userPoolName": "myblogv3fd6a5645_userpool_fd6a5645",
@@ -21,15 +21,20 @@
         "email"
     ],
     "userpoolClientGenerateSecret": true,
-    "userpoolClientRefreshTokenValidity": 30,
+    "userpoolClientRefreshTokenValidity": "30",
     "userpoolClientWriteAttributes": [
         "email"
     ],
     "userpoolClientReadAttributes": [
-        "email"
+        "email",
+        "family_name",
+        "middle_name",
+        "given_name",
+        "name",
+        "profile"
     ],
     "userpoolClientLambdaRole": "myblogfd6a5645_userpoolclient_lambda_role",
-    "userpoolClientSetAttributes": false,
+    "userpoolClientSetAttributes": true,
     "resourceName": "myblogv3fd6a5645",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
@@ -44,7 +49,7 @@
             "Arn"
         ]
     },
-    "useDefault": "defaultSocial",
+    "useDefault": "manual",
     "hostedUI": true,
     "usernameAttributes": [
         "email"
@@ -55,5 +60,13 @@
     ],
     "hostedUIProviderMeta": "[{\"ProviderName\":\"Facebook\",\"authorize_scopes\":\"email,public_profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"id\"}}]",
     "dependsOn": [],
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://blog.theyucheng.com/\",\"https://blog.theyucheng.com/\"],\"LogoutURLs\":[\"https://blog.theyucheng.com/\"]}"
+    "userPoolGroupList": [],
+    "userPoolGroups": false,
+    "adminQueries": false,
+    "triggers": "{}",
+    "parentStack": {
+        "Ref": "AWS::StackId"
+    },
+    "permissions": [],
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:8000/\"],\"LogoutURLs\":[\"http://localhost:8000/\"]}"
 }

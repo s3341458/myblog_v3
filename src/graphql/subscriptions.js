@@ -6,6 +6,7 @@ export const onCreateComment = `subscription OnCreateComment($owner: String!) {
     id
     content
     postPath
+    posterName
     timestamp
     owner
   }
@@ -16,6 +17,7 @@ export const onUpdateComment = `subscription OnUpdateComment($owner: String!) {
     id
     content
     postPath
+    posterName
     timestamp
     owner
   }
@@ -26,6 +28,7 @@ export const onDeleteComment = `subscription OnDeleteComment($owner: String!) {
     id
     content
     postPath
+    posterName
     timestamp
     owner
   }

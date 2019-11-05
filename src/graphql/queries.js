@@ -6,6 +6,7 @@ export const getComment = `query GetComment($id: ID!) {
     id
     content
     postPath
+    posterName
     timestamp
     owner
   }
@@ -21,6 +22,7 @@ export const listComments = `query ListComments(
       id
       content
       postPath
+      posterName
       timestamp
       owner
     }

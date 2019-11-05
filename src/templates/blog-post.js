@@ -15,7 +15,6 @@ import CommentForm from "../components/CommentForm"
 
 import { connect } from "react-redux"
 
-import { Auth } from 'aws-amplify';
 
 const GET_POST_COMMENTS = gql`
   query GetCommentsForPost($postPath: String!) {
@@ -25,6 +24,7 @@ const GET_POST_COMMENTS = gql`
         timestamp
         content
         postPath
+        posterName
       }
     }
   }
@@ -35,6 +35,7 @@ class BlogPostTemplate extends React.Component {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
+    console.log(this.props.location, 'debug here location')
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -98,8 +99,7 @@ class BlogPostTemplate extends React.Component {
                   )
                 }}
               </Query>
-              <CommentForm/>
-              <button onClick={() => Auth.federatedSignIn()}>Sign In New</button>
+              <CommentForm currentPath={this.props.location.pathname} />
             </div>
             <Bio />
           </footer>

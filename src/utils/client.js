@@ -5,19 +5,7 @@ import { createHttpLink } from "apollo-link-http"
 import { InMemoryCache } from "apollo-cache-inmemory"
 import { createAppSyncLink, AUTH_TYPE } from "aws-appsync"
 import awsconfig from "../aws-exports"
-//import AWSAppSyncClient from 'aws-appsync'
 
-//Amplify.awsconfigure({
-//Auth: {
-//identityPoolId: process.env.GATSBY_COGNITO_IDENTITY_POOL_ID,
-//region: process.env.GATSBY_AWS_REGION,
-//userPoolId: process.env.GATSBY_AWS_USER_POOL_ID,
-//userPoolWebClientId: process.env.GATSBY_AWS_USER_POOL_CLIENT_ID,
-//authenticationFlowType: 'USER_PASSWORD_AUTH'
-//}
-
-//})
-//
 Amplify.configure(awsconfig)
 
 const httpLink = createHttpLink({

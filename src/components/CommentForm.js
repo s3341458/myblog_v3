@@ -8,32 +8,12 @@ const POST_COMMENT = gql`
   ${createComment}
 `
 
-//const POST_COMMENT = gql`
-//mutation createComment($content: String!) {
-//createComment(
-//input: {
-//content: $content
-//postPath: "hello-world"
-//timestamp: "2019-08-14T16:00:00-07:00"
-//}
-//) {
-//id
-//content
-//owner
-//postPath
-//timestamp
-//}
-//}
-//`
-
 function CommentForm(props) {
   let input
   const postComment = useMutation(POST_COMMENT)[0]
   const [currentUser, setCurrentUser] = useState(null)
 
   Auth.currentUserInfo().then(user => {
-    console.log("debug here", user)
-    console.log(props, "debug here");
     if (!currentUser) {
       setCurrentUser(user)
     }

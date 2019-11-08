@@ -74,6 +74,7 @@ class BlogPostTemplate extends React.Component {
               <Query
                 query={GET_POST_COMMENTS}
                 client={publicClient}
+                pollInterval={1000}
                 variables={{ postPath: post.fields.slug.replace(/\//g, "") }}
               >
                 {({ loading, error, data }) => {

@@ -19,6 +19,8 @@ function CommentForm(props) {
     }
   })
 
+  console.log(postComment)
+
   return currentUser ? (
     <div>
       <form
@@ -32,6 +34,7 @@ function CommentForm(props) {
                 timestamp: new Date().toISOString(),
                 posterName:
                   currentUser.attributes.given_name +
+                  " " +
                   currentUser.attributes.family_name,
               },
             },

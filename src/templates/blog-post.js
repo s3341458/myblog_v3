@@ -14,25 +14,13 @@ import Comment from "../components/comment"
 import CommentForm from "../components/CommentForm"
 
 import { connect } from "react-redux"
+import { listComments } from "../graphql/queries"
 
-
-const GET_POST_COMMENTS = gql`
-  query GetCommentsForPost($postPath: String!) {
-    listComments(filter: { postPath: { eq: $postPath } }) {
-      items {
-        id
-        timestamp
-        content
-        postPath
-        posterName
-      }
-    }
-  }
-`
 
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
+    const currentPath = post.fields.slug.replace(/\//g, "")
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
 
@@ -72,10 +60,10 @@ class BlogPostTemplate extends React.Component {
             <div style={{ margin: "10px 0 60px 0" }}>
               <h3>Comments:</h3>
               <Query
-                query={GET_POST_COMMENTS}
+                query={gql(listComments)}
                 client={publicClient}
                 pollInterval={1000}
-                variables={{ postPath: post.fields.slug.replace(/\//g, "") }}
+                variables={{ filter: { postPath: { eq: currentPath } } }}
               >
                 {({ loading, error, data }) => {
                   if (loading) {
@@ -91,7 +79,7 @@ class BlogPostTemplate extends React.Component {
                   ) : (
                     <ul>
                       {comments.map(comment => (
-                        <li key={comment.id}>
+                        <li key={comment.timestamp}>
                           <Comment comment={comment} />
                         </li>
                       ))}

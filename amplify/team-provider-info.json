@@ -1,38 +1,19 @@
 {
     "dev": {
         "awscloudformation": {
-            "AuthRoleName": "myblogv3-dev-20190928113102-authRole",
-            "UnauthRoleArn": "arn:aws:iam::340854501236:role/myblogv3-dev-20190928113102-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::340854501236:role/myblogv3-dev-20190928113102-authRole",
+            "AuthRoleName": "amplify-myblogv3-dev-220052-authRole",
+            "UnauthRoleArn": "arn:aws:iam::340854501236:role/amplify-myblogv3-dev-220052-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::340854501236:role/amplify-myblogv3-dev-220052-authRole",
             "Region": "ap-southeast-2",
-            "DeploymentBucketName": "myblogv3-dev-20190928113102-deployment",
-            "UnauthRoleName": "myblogv3-dev-20190928113102-unauthRole",
-            "StackName": "myblogv3-dev-20190928113102",
-            "StackId": "arn:aws:cloudformation:ap-southeast-2:340854501236:stack/myblogv3-dev-20190928113102/a20cedc0-e18f-11e9-a77b-0a564743ac36"
+            "DeploymentBucketName": "amplify-myblogv3-dev-220052-deployment",
+            "UnauthRoleName": "amplify-myblogv3-dev-220052-unauthRole",
+            "StackName": "amplify-myblogv3-dev-220052",
+            "StackId": "arn:aws:cloudformation:ap-southeast-2:340854501236:stack/amplify-myblogv3-dev-220052/0803edc0-0217-11ea-aad7-0a960248e856"
         },
         "categories": {
             "auth": {
-                "myblogv3fd6a5645": {
-                    "hostedUIProviderCreds": "[{\"ProviderName\":\"Facebook\",\"client_id\":\"2006373376129351\",\"client_secret\":\"69ce729b6e38babff5a83436b59e9aae\"}]"
-                }
-            }
-        }
-    },
-    "prod": {
-        "awscloudformation": {
-            "AuthRoleName": "myblogv3-prod-20191020220749-authRole",
-            "UnauthRoleArn": "arn:aws:iam::340854501236:role/myblogv3-prod-20191020220749-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::340854501236:role/myblogv3-prod-20191020220749-authRole",
-            "Region": "ap-southeast-2",
-            "DeploymentBucketName": "myblogv3-prod-20191020220749-deployment",
-            "UnauthRoleName": "myblogv3-prod-20191020220749-unauthRole",
-            "StackName": "myblogv3-prod-20191020220749",
-            "StackId": "arn:aws:cloudformation:ap-southeast-2:340854501236:stack/myblogv3-prod-20191020220749/db365310-f329-11e9-ab09-0a72ab51bdd0"
-        },
-        "categories": {
-            "auth": {
-                "myblogv3fd6a5645": {
-                    "hostedUIProviderCreds": "[{\"ProviderName\":\"Facebook\",\"client_id\":\"522811008278907\",\"client_secret\":\"2c3bc9634ef6727327164a76ff78dfab\"}]"
+                "myblogv3f2dfe67d": {
+                    "hostedUIProviderCreds": "[{\"ProviderName\":\"Facebook\",\"client_id\":\"544383712797791\",\"client_secret\":\"4f956f60818c3d9e87ffd32d7fd161e6\"}]"
                 }
             }
         }

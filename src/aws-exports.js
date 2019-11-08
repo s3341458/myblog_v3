@@ -2,15 +2,12 @@
 
 const awsmobile = {
     "aws_project_region": "ap-southeast-2",
-    "aws_content_delivery_bucket": "myblogv3-20190928113354-hostingbucket-dev",
-    "aws_content_delivery_bucket_region": "ap-southeast-2",
-    "aws_content_delivery_url": "http://myblogv3-20190928113354-hostingbucket-dev.s3-website-ap-southeast-2.amazonaws.com",
-    "aws_cognito_identity_pool_id": "ap-southeast-2:6b333551-43a8-4a34-acf7-e736301024e8",
+    "aws_cognito_identity_pool_id": "ap-southeast-2:62d1bbc8-4e00-4216-872d-52ce4cdee225",
     "aws_cognito_region": "ap-southeast-2",
-    "aws_user_pools_id": "ap-southeast-2_H15UJzCt6",
-    "aws_user_pools_web_client_id": "6aatdg2jt7ta3n5n5vcli4h63q",
+    "aws_user_pools_id": "ap-southeast-2_wxG3F26Ax",
+    "aws_user_pools_web_client_id": "5tnm0kofq09lv3cof7hdqcbikf",
     "oauth": {
-        "domain": "devapi-dev.auth.ap-southeast-2.amazoncognito.com",
+        "domain": "myblog-api-dev.auth.ap-southeast-2.amazoncognito.com",
         "scope": [
             "phone",
             "email",
@@ -23,10 +20,13 @@ const awsmobile = {
         "responseType": "code"
     },
     "federationTarget": "COGNITO_USER_POOLS",
-    "aws_appsync_graphqlEndpoint": "https://gxeelchd55hjdmdff2npm4kha4.appsync-api.ap-southeast-2.amazonaws.com/graphql",
+    "aws_appsync_graphqlEndpoint": "https://oh7ee3t5j5cxjny42iuqrk6w7a.appsync-api.ap-southeast-2.amazonaws.com/graphql",
     "aws_appsync_region": "ap-southeast-2",
-    "aws_appsync_authenticationType": "AMAZON_COGNITO_USER_POOLS",
-    "aws_appsync_apiKey": "da2-wv4fsu6pjbdvpam4dcl5niunda"
+    "aws_appsync_authenticationType": "API_KEY",
+    "aws_appsync_apiKey": "da2-2utla6xvcbbi5labiijbverxj4",
+    "aws_content_delivery_bucket": "myblogv3-20191108224132-hostingbucket-dev",
+    "aws_content_delivery_bucket_region": "ap-southeast-2",
+    "aws_content_delivery_url": "http://myblogv3-20191108224132-hostingbucket-dev.s3-website-ap-southeast-2.amazonaws.com"
 };
 
 

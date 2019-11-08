@@ -1,9 +1,8 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getComment = `query GetComment($id: ID!) {
-  getComment(id: $id) {
-    id
+export const getComment = `query GetComment($postPath: String!, $timestamp: AWSDateTime!) {
+  getComment(postPath: $postPath, timestamp: $timestamp) {
     content
     postPath
     posterName
@@ -13,13 +12,22 @@ export const getComment = `query GetComment($id: ID!) {
 }
 `;
 export const listComments = `query ListComments(
+  $postPath: String
+  $timestamp: ModelStringKeyConditionInput
   $filter: ModelCommentFilterInput
   $limit: Int
   $nextToken: String
+  $sortDirection: ModelSortDirection
 ) {
-  listComments(filter: $filter, limit: $limit, nextToken: $nextToken) {
+  listComments(
+    postPath: $postPath
+    timestamp: $timestamp
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    sortDirection: $sortDirection
+  ) {
     items {
-      id
       content
       postPath
       posterName

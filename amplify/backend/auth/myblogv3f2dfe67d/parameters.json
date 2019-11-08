@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "myblogv3fd6a5645_identitypool_4b21b70e",
+    "identityPoolName": "myblogv3f2dfe67d_identitypool_f2dfe67d",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "myblogfd6a5645",
-    "userPoolName": "myblogv3fd6a5645_userpool_fd6a5645",
+    "resourceNameTruncated": "myblogf2dfe67d",
+    "userPoolName": "myblogv3f2dfe67d_userpool_f2dfe67d",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -21,21 +21,16 @@
         "email"
     ],
     "userpoolClientGenerateSecret": true,
-    "userpoolClientRefreshTokenValidity": "30",
+    "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [
         "email"
     ],
     "userpoolClientReadAttributes": [
-        "email",
-        "family_name",
-        "middle_name",
-        "given_name",
-        "name",
-        "profile"
+        "email"
     ],
-    "userpoolClientLambdaRole": "myblogfd6a5645_userpoolclient_lambda_role",
-    "userpoolClientSetAttributes": true,
-    "resourceName": "myblogv3fd6a5645",
+    "userpoolClientLambdaRole": "myblogf2dfe67d_userpoolclient_lambda_role",
+    "userpoolClientSetAttributes": false,
+    "resourceName": "myblogv3f2dfe67d",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -49,24 +44,22 @@
             "Arn"
         ]
     },
-    "useDefault": "manual",
+    "useDefault": "defaultSocial",
     "hostedUI": true,
     "usernameAttributes": [
         "email"
     ],
-    "hostedUIDomainName": "devapi",
+    "triggers": "{}",
+    "hostedUIDomainName": "myblog-api",
     "authProvidersUserPool": [
         "Facebook"
     ],
     "hostedUIProviderMeta": "[{\"ProviderName\":\"Facebook\",\"authorize_scopes\":\"email,public_profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"id\"}}]",
-    "dependsOn": [],
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:8000/\"],\"LogoutURLs\":[\"http://localhost:8000/\"]}",
     "userPoolGroupList": [],
-    "userPoolGroups": false,
-    "adminQueries": false,
-    "triggers": "{}",
     "parentStack": {
         "Ref": "AWS::StackId"
     },
     "permissions": [],
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:8000/\"],\"LogoutURLs\":[\"http://localhost:8000/\"]}"
+    "dependsOn": []
 }

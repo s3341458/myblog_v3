@@ -16,16 +16,18 @@ const awsPrivateLink = createAppSyncLink({
   url: awsconfig.aws_appsync_graphqlEndpoint,
   region: awsconfig.aws_appsync_region,
   auth: {
-    type: awsconfig.aws_appsync_authenticationType,
+    type: AUTH_TYPE.AMAZON_COGNITO_USER_POOLS,
     jwtToken: async () =>
       (await Auth.currentSession()).getAccessToken().getJwtToken(),
   },
 })
 
+console.log(awsconfig.aws_appsync_graphqlEndpoint, "debug here endpoint aws");
+
 const awsPublicLink = createAppSyncLink({
   url: awsconfig.aws_appsync_graphqlEndpoint,
   region: awsconfig.aws_appsync_region,
-  auth: { type: AUTH_TYPE.API_KEY, apiKey: awsconfig.aws_appsync_apiKey },
+  auth: { type: awsconfig.aws_appsync_authenticationType, apiKey: awsconfig.aws_appsync_apiKey },
 })
 
 export const publicClient = new ApolloClient({

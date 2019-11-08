@@ -1,5 +1,6 @@
 type Comment
   @model
+  @key(fields: ["postPath", "timestamp"])
   @auth(rules: [
       {allow: public, operations: [read]},
       {allow: owner, operations: [create, update, delete]}

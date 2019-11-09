@@ -15,18 +15,15 @@ const awsmobile = {
             "profile",
             "aws.cognito.signin.user.admin"
         ],
-        "redirectSignIn": "http://localhost:8000/",
-        "redirectSignOut": "http://localhost:8000/",
+        "redirectSignIn": "https://blog.theyucheng.com/",
+        "redirectSignOut": "https://blog.theyucheng.com/",
         "responseType": "code"
     },
     "federationTarget": "COGNITO_USER_POOLS",
     "aws_appsync_graphqlEndpoint": "https://fhiau3crnrenvgchw2lp6vf2uy.appsync-api.ap-southeast-2.amazonaws.com/graphql",
     "aws_appsync_region": "ap-southeast-2",
     "aws_appsync_authenticationType": "API_KEY",
-    "aws_appsync_apiKey": "da2-3fbvazserngjlm3csul3mrmchm",
-    "aws_content_delivery_bucket": "myblogv3-20191108224132-hostingbucket-prod",
-    "aws_content_delivery_bucket_region": "ap-southeast-2",
-    "aws_content_delivery_url": "http://myblogv3-20191108224132-hostingbucket-prod.s3-website-ap-southeast-2.amazonaws.com"
+    "aws_appsync_apiKey": "da2-3fbvazserngjlm3csul3mrmchm"
 };
 
 

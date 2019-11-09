@@ -51,15 +51,8 @@ function CommentForm(props) {
       </form>
     </div>
   ) : (
-    <button
-      onClick={() =>
-        Auth.federatedSignIn({
-          provider: "Facebook",
-          scope: "email, public_profile",
-        })
-      }
-    >
-      Sign In With Facebook
+    <button onClick={() => Auth.federatedSignIn()}>
+      Sign Up / Login In To make comments
     </button>
   )
 }

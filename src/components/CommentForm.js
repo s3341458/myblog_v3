@@ -19,8 +19,6 @@ function CommentForm(props) {
     }
   })
 
-  console.log(postComment)
-
   return currentUser ? (
     <div>
       <form

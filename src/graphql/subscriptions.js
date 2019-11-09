@@ -3,7 +3,6 @@
 
 export const onCreateComment = `subscription OnCreateComment($owner: String!) {
   onCreateComment(owner: $owner) {
-    id
     content
     postPath
     posterName
@@ -14,7 +13,6 @@ export const onCreateComment = `subscription OnCreateComment($owner: String!) {
 `;
 export const onUpdateComment = `subscription OnUpdateComment($owner: String!) {
   onUpdateComment(owner: $owner) {
-    id
     content
     postPath
     posterName
@@ -25,7 +23,6 @@ export const onUpdateComment = `subscription OnUpdateComment($owner: String!) {
 `;
 export const onDeleteComment = `subscription OnDeleteComment($owner: String!) {
   onDeleteComment(owner: $owner) {
-    id
     content
     postPath
     posterName

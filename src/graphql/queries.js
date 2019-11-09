@@ -3,7 +3,6 @@
 
 export const getComment = `query GetComment($postPath: String!, $timestamp: AWSDateTime!) {
   getComment(postPath: $postPath, timestamp: $timestamp) {
-    id
     content
     postPath
     posterName
@@ -29,7 +28,6 @@ export const listComments = `query ListComments(
     sortDirection: $sortDirection
   ) {
     items {
-      id
       content
       postPath
       posterName

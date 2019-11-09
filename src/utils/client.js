@@ -22,8 +22,6 @@ const awsPrivateLink = createAppSyncLink({
   },
 })
 
-console.log(awsconfig.aws_appsync_graphqlEndpoint, "debug here endpoint aws");
-
 const awsPublicLink = createAppSyncLink({
   url: awsconfig.aws_appsync_graphqlEndpoint,
   region: awsconfig.aws_appsync_region,
